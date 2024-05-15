@@ -24,6 +24,7 @@ namespace CarColorChanger
         //private UIUpdateState uiUpdateState;
         private PrefabSystem prefabSystem;
         public static CarColorChangerSystem Instance { get; private set; }
+        private VariationPack _currentVariationPack;
 
         protected override void OnCreate()
         {
@@ -43,6 +44,10 @@ namespace CarColorChanger
             query = GetEntityQuery(desc);
             //uiUpdateState = UIUpdateState.Create(World, 1024);
             prefabSystem = World.GetOrCreateSystemManaged<PrefabSystem>();
+            if (_currentVariationPack == null)
+            {
+                _currentVariationPack = VariationPack.Rdm();
+            }
         }
 
         protected override void OnGameLoadingComplete(Purpose purpose, GameMode mode)
@@ -119,17 +124,18 @@ namespace CarColorChanger
                     var subMesh = EntityManager.GetBuffer<SubMesh>(entity);
                     if (subMesh.IsEmpty)
                         continue;
-                    if (subMesh[0].m_SubMesh != Entity.Null &&
-                        EntityManager.HasBuffer<ColorVariation>(subMesh[0].m_SubMesh))
+                    if (subMesh[0].m_SubMesh != Entity.Null && EntityManager.HasBuffer<ColorVariation>(subMesh[0].m_SubMesh))
                     {
                         var colorVariations = EntityManager.GetBuffer<ColorVariation>(subMesh[0].m_SubMesh);
-
-                        for (int i = 0; i < colorVariations.Length; i++)
+                        //VariationPack.SaveDefault(colorVariations);
+                        /*colorVariations.Clear();
+                        colorVariations.Add(new ColorVariation()
                         {
-                            var col = colorVariations[i];
-                            col.m_ColorSet = new ColorSet(Color.magenta);
-                            colorVariations[i] = col;
-                        }
+                            m_ColorSet = new ColorSet(Color.black)
+                        });*/
+
+                        _currentVariationPack.FillColorVariations(ref colorVariations);
+
                     }
                 }
             }
