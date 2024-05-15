@@ -1,6 +1,8 @@
 using System;
+using System.Collections.Generic;
 using Colossal.Entities;
 using Colossal.Logging;
+using Colossal.Serialization.Entities;
 using Game;
 using Game.Prefabs;
 using Game.Rendering;
@@ -16,62 +18,126 @@ namespace CarColorChanger
     public partial class CarColorChangerSystem : GameSystemBase
     {
         private static ILog Logger;
+
         private EntityQuery query;
-        private UIUpdateState uiUpdateState;
+
+        //private UIUpdateState uiUpdateState;
+        private PrefabSystem prefabSystem;
+        public static CarColorChangerSystem Instance { get; private set; }
+
         protected override void OnCreate()
         {
             base.OnCreate();
+            Instance = this;
             Enabled = true;
             Logger = Mod.log;
 
             EntityQueryDesc desc = new EntityQueryDesc
             {
-                Any = [
+                Any =
+                [
                     ComponentType.ReadOnly<ParkedCar>(),
                     ComponentType.ReadOnly<PersonalCar>(),
                 ]
             };
             query = GetEntityQuery(desc);
-            uiUpdateState = UIUpdateState.Create(World, 1024);
+            //uiUpdateState = UIUpdateState.Create(World, 1024);
+            prefabSystem = World.GetOrCreateSystemManaged<PrefabSystem>();
         }
 
-
-        protected override void OnUpdate()
+        protected override void OnGameLoadingComplete(Purpose purpose, GameMode mode)
         {
-            if (query == null || !uiUpdateState.Advance())
-                return;
-            //Logger.Info("Hello");
+            base.OnGameLoadingComplete(purpose, mode);
+            if (mode == GameMode.MainMenu)
+            {
+                //UpdatePrefabs();
+                UpdateEntities();
+            }
+        }
+
+        public static void UpdatePrefabsManually()
+        {
+            Instance.UpdateEntities();
+        }
+
+        private void UpdatePrefabs()
+        {
+            EntityQueryDesc desc = new EntityQueryDesc
+            {
+                Any =
+                [
+                    ComponentType.ReadOnly<PersonalCarData>(),
+                ],
+                All =
+                [
+                    ComponentType.ReadOnly<VehicleData>(),
+                    ComponentType.ReadOnly<CarData>(),
+                ]
+            };
+            query = GetEntityQuery(desc);
+
 
             var entities = query.ToEntityArray(Allocator.Temp);
             foreach (var entity in entities)
             {
-                if (EntityManager.TryGetComponent<PrefabRef>(entity, out var prefabRef))
+                if (prefabSystem.TryGetPrefab(entity, out PrefabBase prefabBase))
                 {
-                    if (EntityManager.HasBuffer<SubMesh>(prefabRef))
+                    if (prefabBase is CarPrefab prefab)
                     {
-                        var subMesh = EntityManager.GetBuffer<SubMesh>(prefabRef);
-                        if (subMesh.IsEmpty)
+                        if (prefab.m_Meshes.Length == 0)
                             continue;
-                        if(subMesh[0].m_SubMesh != Entity.Null && EntityManager.HasBuffer<ColorVariation>(subMesh[0].m_SubMesh))
-                        {
-                            var colorVariations = EntityManager.GetBuffer<ColorVariation>(subMesh[0].m_SubMesh);
-                            for (int i = 0; i < colorVariations.Length; i++)
+                        var mesh = prefab.m_Meshes[0].m_Mesh;
+                        var colorProperties = mesh.GetComponent<ColorProperties>();
+                        colorProperties.m_ColorVariations =
+                        [
+                            new ColorProperties.VariationSet()
                             {
-                                if (i < colorVariations.Length / 2)
-                                {
-                                    var col = colorVariations[i];
-                                    col.m_ColorSet = new ColorSet(Color.black);
-                                    colorVariations[i] = col;
-                                }
-
+                                m_Colors = [Color.red, Color.red, Color.red]
                             }
+                        ];
+                        prefabSystem.UpdatePrefab(prefab);
+                    }
+                }
+            }
+        }
 
-                            //colorVariations = new DynamicBuffer<ColorVariation>();
-                            //colorVariations[0] = new ColorVariation() { m_ColorSet = new ColorSet(Color.red) };
+        private void UpdateEntities()
+        {
+            EntityQueryDesc desc = new EntityQueryDesc
+            {
+                Any =
+                [
+                    ComponentType.ReadOnly<PersonalCarData>(),
+                ]
+            };
+            query = GetEntityQuery(desc);
+            var entities = query.ToEntityArray(Allocator.Temp);
+            foreach (var entity in entities)
+            {
+                if (EntityManager.HasBuffer<SubMesh>(entity))
+                {
+                    var subMesh = EntityManager.GetBuffer<SubMesh>(entity);
+                    if (subMesh.IsEmpty)
+                        continue;
+                    if (subMesh[0].m_SubMesh != Entity.Null &&
+                        EntityManager.HasBuffer<ColorVariation>(subMesh[0].m_SubMesh))
+                    {
+                        var colorVariations = EntityManager.GetBuffer<ColorVariation>(subMesh[0].m_SubMesh);
+
+                        for (int i = 0; i < colorVariations.Length; i++)
+                        {
+                            var col = colorVariations[i];
+                            col.m_ColorSet = new ColorSet(Color.magenta);
+                            colorVariations[i] = col;
                         }
                     }
                 }
             }
+        }
+
+        protected override void OnUpdate()
+        {
+
         }
     }
 

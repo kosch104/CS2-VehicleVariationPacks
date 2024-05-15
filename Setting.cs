@@ -27,7 +27,7 @@ namespace CarColorChanger
         [SettingsUISection(kSection, kButtonGroup)]
         public bool Button
         {
-            set { Mod.log.Info("Button clicked"); }
+            set { CarColorChangerSystem.UpdatePrefabsManually(); }
         }
 
         [SettingsUIButton]
@@ -95,7 +95,7 @@ namespace CarColorChanger
         {
             return new Dictionary<string, string>
             {
-                { m_Setting.GetSettingsLocaleID(), "Mod settings sample" },
+                { m_Setting.GetSettingsLocaleID(), "Car Color Changer" },
                 { m_Setting.GetOptionTabLocaleID(Setting.kSection), "Main" },
 
                 { m_Setting.GetOptionGroupLocaleID(Setting.kButtonGroup), "Buttons" },
