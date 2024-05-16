@@ -98,7 +98,7 @@ public record VariationPack
     public static List<string> GetVariationPackNames()
     {
         var modPath = Path.GetDirectoryName(Mod.path);
-        var path = Path.Combine(modPath, "Resources", "packs");
+        var path = Path.Combine(modPath, "packs");
         if (!Directory.Exists(path))
             return new List<string>();
 
@@ -200,7 +200,7 @@ public record VariationPack
     public static VariationPack Load(string name)
     {
         var modPath = Path.GetDirectoryName(Mod.path);
-        var path = Path.Combine(modPath, "Resources", "packs", name + ".json");
+        var path = Path.Combine(modPath, "packs", name + ".json");
         if (!File.Exists(path))
             return null;
 
@@ -211,7 +211,7 @@ public record VariationPack
     public void Save()
     {
         var modPath = Path.GetDirectoryName(Mod.path);
-        var path = Path.Combine(modPath, "Resources", "packs", Name + ".json");
+        var path = Path.Combine(modPath, "packs", Name + ".json");
         if (!Directory.Exists(Path.GetDirectoryName(path)))
             Directory.CreateDirectory(Path.GetDirectoryName(path));
 

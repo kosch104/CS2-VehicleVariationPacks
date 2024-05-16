@@ -86,18 +86,13 @@
     <ItemGroup>
         <None Include="$(ModPropsFile)" Link="Properties\Mod.props"/>
         <None Include="$(ModTargetsFile)" Link="Properties\Mod.targets"/>
-        <None Update="Resources\packs\Custom1.json">
-          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-        </None>
-        <None Update="Properties\Custom1.json">
-          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-        </None>
-        <None Update="Resources\packs\Vanilla_rebalance.json">
-          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-        </None>
-        <None Update="Resources\packs\VioPink.json">
-          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-        </None>
     </ItemGroup>
+
+    <Target Name="GetAdditionalFiles" AfterTargets="AfterBuild">
+        <ItemGroup>
+            <AdditionalFilesToDeploy Include="$(AdditionalFilesDirectory)\**\*.*" />
+        </ItemGroup>
+        <Copy SourceFiles="@(AdditionalFilesToDeploy)" DestinationFiles="@(AdditionalFilesToDeploy->'$(DeployDir)\%(RecursiveDir)%(Filename)%(Extension)')" />
+    </Target>
 
 </Project>
