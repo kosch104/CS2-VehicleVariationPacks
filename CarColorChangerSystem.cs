@@ -4,6 +4,7 @@ using Colossal.Entities;
 using Colossal.Logging;
 using Colossal.Serialization.Entities;
 using Game;
+using Game.Common;
 using Game.Prefabs;
 using Game.Rendering;
 using Game.UI;
@@ -37,13 +38,13 @@ namespace CarColorChanger
             {
                 Any =
                 [
-                    ComponentType.ReadOnly<ParkedCar>(),
-                    ComponentType.ReadOnly<PersonalCar>(),
+                    ComponentType.ReadOnly<PersonalCarData>(),
                 ]
             };
             query = GetEntityQuery(desc);
             //uiUpdateState = UIUpdateState.Create(World, 1024);
             prefabSystem = World.GetOrCreateSystemManaged<PrefabSystem>();
+            SaveDefaultVariations();
             if (_currentVariationPack == null)
             {
                 _currentVariationPack = VariationPack.Test();
@@ -65,16 +66,8 @@ namespace CarColorChanger
             Instance.UpdateEntities();
         }
 
-        private void UpdateEntities()
+        private void SaveDefaultVariations()
         {
-            EntityQueryDesc desc = new EntityQueryDesc
-            {
-                Any =
-                [
-                    ComponentType.ReadOnly<PersonalCarData>(),
-                ]
-            };
-            query = GetEntityQuery(desc);
             var entities = query.ToEntityArray(Allocator.Temp);
             VariationPack pack = new VariationPack();
             foreach (var entity in entities)
@@ -89,14 +82,31 @@ namespace CarColorChanger
                         var colorVariations = EntityManager.GetBuffer<ColorVariation>(subMesh[0].m_SubMesh);
                         var prefabName = prefabSystem.GetPrefabName(entity);
                         pack.SavePrefabVariations(prefabName, colorVariations);
+                    }
+                }
+            }
+            pack.Name = "Vanilla";
+            pack.Save();
+        }
 
+        private void UpdateEntities()
+        {
+            var entities = query.ToEntityArray(Allocator.Temp);
+            foreach (var entity in entities)
+            {
+                if (EntityManager.HasBuffer<SubMesh>(entity))
+                {
+                    var subMesh = EntityManager.GetBuffer<SubMesh>(entity);
+                    if (subMesh.IsEmpty)
+                        continue;
+                    if (subMesh[0].m_SubMesh != Entity.Null && EntityManager.HasBuffer<ColorVariation>(subMesh[0].m_SubMesh))
+                    {
+                        var colorVariations = EntityManager.GetBuffer<ColorVariation>(subMesh[0].m_SubMesh);
+                        var prefabName = prefabSystem.GetPrefabName(entity);
                         _currentVariationPack.FillColorVariations(prefabName, ref colorVariations);
                     }
                 }
             }
-
-            pack.Name = "Vanilla";
-            pack.Save();
         }
 
         protected override void OnUpdate()
@@ -114,7 +124,7 @@ namespace CarColorChanger
                     Instance._currentVariationPack = VariationPack.Test();
                     UpdateEntitiesManually();
                 }
-                if (value == "Rdm")
+                if (value == "CrazyColors")
                 {
                     Instance._currentVariationPack = VariationPack.Rdm();
                     UpdateEntitiesManually();

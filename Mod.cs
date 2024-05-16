@@ -22,13 +22,13 @@ namespace CarColorChanger
             if (GameManager.instance.modManager.TryGetExecutableAsset(this, out var asset))
                 path = asset.path;
 
+            updateSystem.UpdateAt<CarColorChangerSystem>(SystemUpdatePhase.MainLoop);
+
             m_Setting = new Setting(this);
             m_Setting.RegisterInOptionsUI();
             GameManager.instance.localizationManager.AddSource("en-US", new LocaleEN(m_Setting));
 
             AssetDatabase.global.LoadSettings(nameof(CarColorChanger), m_Setting, new Setting(this));
-
-            updateSystem.UpdateAt<CarColorChangerSystem>(SystemUpdatePhase.MainLoop);
         }
 
         public void OnDispose()

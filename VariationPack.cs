@@ -106,7 +106,7 @@ public record VariationPack
         List<string> names = new List<string>()
         {
             "debug_Default",
-            "debug_Rdm",
+            "debug_CrazyColors",
             "debug_Test"
         };
         foreach (var file in files)
