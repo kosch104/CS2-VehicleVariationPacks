@@ -19,7 +19,7 @@ namespace CarColorChanger
 
         public bool UpdateEntities
         {
-            set {  }
+            set { CarColorChangerSystem.Instance.UpdateEntityInstances(); }
         }
 
         private string _packDropdown = "Vanilla";
@@ -36,7 +36,7 @@ namespace CarColorChanger
                 _packDropdown = value;
                 if (value != null)
                 {
-                    CarColorChangerSystem.LoadVariationPack(value);
+                    CarColorChangerSystem.Instance.LoadVariationPack(value);
                 }
             }
         }

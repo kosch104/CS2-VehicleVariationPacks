@@ -66,6 +66,23 @@ namespace CarColorChanger
             Instance.UpdateEntities();
         }
 
+        public void UpdateEntityInstances()
+        {
+            EntityQueryDesc desc = new EntityQueryDesc
+            {
+                Any =
+                [
+                    ComponentType.ReadOnly<PersonalCar>(),
+                    ComponentType.ReadOnly<ParkedCar>(),
+                ]
+            };
+            var ûpdateQuery = GetEntityQuery(desc);
+            foreach (var entity in ûpdateQuery.ToEntityArray(Allocator.Temp))
+            {
+                EntityManager.AddComponent<BatchesUpdated>(entity);
+            }
+        }
+
         private void SaveDefaultVariations()
         {
             var entities = query.ToEntityArray(Allocator.Temp);
@@ -114,7 +131,7 @@ namespace CarColorChanger
 
         }
 
-        public static void LoadVariationPack(string value)
+        public void LoadVariationPack(string value)
         {
             if (value.StartsWith("debug_"))
             {
@@ -122,23 +139,22 @@ namespace CarColorChanger
                 if (value == "Test")
                 {
                     Instance._currentVariationPack = VariationPack.Test();
-                    UpdateEntitiesManually();
                 }
                 if (value == "CrazyColors")
                 {
                     Instance._currentVariationPack = VariationPack.Rdm();
-                    UpdateEntitiesManually();
                 }
                 if (value == "Default")
                 {
                     Instance._currentVariationPack = VariationPack.Default();
-                    UpdateEntitiesManually();
                 }
-
-                return;
             }
-            Instance._currentVariationPack = VariationPack.Load(value);
+            else
+            {
+                Instance._currentVariationPack = VariationPack.Load(value);
+            }
             UpdateEntitiesManually();
+            UpdateEntityInstances();
         }
     }
 
