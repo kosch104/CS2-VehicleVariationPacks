@@ -46,7 +46,7 @@ namespace CarColorChanger
             prefabSystem = World.GetOrCreateSystemManaged<PrefabSystem>();
             if (_currentVariationPack == null)
             {
-                _currentVariationPack = VariationPack.Rdm();
+                _currentVariationPack = VariationPack.Test();
             }
         }
 
@@ -95,7 +95,7 @@ namespace CarColorChanger
                 }
             }
 
-            pack.Name = "Default";
+            pack.Name = "Vanilla";
             pack.Save();
         }
 
@@ -106,6 +106,27 @@ namespace CarColorChanger
 
         public static void LoadVariationPack(string value)
         {
+            if (value.StartsWith("debug_"))
+            {
+                value = value.Replace("debug_", "");
+                if (value == "Test")
+                {
+                    Instance._currentVariationPack = VariationPack.Test();
+                    UpdateEntitiesManually();
+                }
+                if (value == "Rdm")
+                {
+                    Instance._currentVariationPack = VariationPack.Rdm();
+                    UpdateEntitiesManually();
+                }
+                if (value == "Default")
+                {
+                    Instance._currentVariationPack = VariationPack.Default();
+                    UpdateEntitiesManually();
+                }
+
+                return;
+            }
             Instance._currentVariationPack = VariationPack.Load(value);
             UpdateEntitiesManually();
         }

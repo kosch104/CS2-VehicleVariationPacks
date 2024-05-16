@@ -17,7 +17,19 @@ public record PrefabEntry
 
 public record Entry
 {
-    [JsonConverter(typeof(ColorHandler))] public Color color;
+    public Color color
+    {
+        set
+        {
+            color1 = value;
+            color2 = value;
+            color3 = value;
+        }
+    }
+
+    [JsonConverter(typeof(ColorHandler))] public Color color1;
+    [JsonConverter(typeof(ColorHandler))] public Color color2;
+    [JsonConverter(typeof(ColorHandler))] public Color color3;
     public byte probability;
 }
 
@@ -86,12 +98,17 @@ public record VariationPack
     public static List<string> GetVariationPackNames()
     {
         var modPath = Path.GetDirectoryName(Mod.path);
-        var path = Path.Combine(modPath, "Resources");
+        var path = Path.Combine(modPath, "Resources", "packs");
         if (!Directory.Exists(path))
             return new List<string>();
 
         var files = Directory.GetFiles(path, "*.json");
-        List<string> names = new List<string>();
+        List<string> names = new List<string>()
+        {
+            "debug_Default",
+            "debug_Rdm",
+            "debug_Test"
+        };
         foreach (var file in files)
         {
             var name = Path.GetFileNameWithoutExtension(file);
@@ -107,17 +124,34 @@ public record VariationPack
         pack.Entries = new Dictionary<string, List<Entry>>();
         pack.Entries["default"] = new List<Entry>();
 
-        for (int i = 0; i < 100; i++)
+        for (int i = 0; i < 1000; i++)
         {
-            var r = Random.value;
-            var g = Random.value;
-            var b = Random.value;
+
             pack.Entries["default"].Add(new Entry()
             {
-                color = new Color(r, g, b),
+                color1 = new Color(Random.value, Random.value, Random.value),
+                color2 = new Color(Random.value, Random.value, Random.value),
+                color3 = new Color(Random.value, Random.value, Random.value),
                 probability = 1
             });
         }
+
+        return pack;
+    }
+
+    public static VariationPack Test()
+    {
+        VariationPack pack = new VariationPack();
+        pack.Name = "Random";
+        pack.Entries = new Dictionary<string, List<Entry>>();
+        pack.Entries["default"] = new List<Entry>();
+        pack.Entries["default"].Add(new Entry()
+        {
+            color1 = Color.red,
+            color2 = Color.green,
+            color3 = Color.blue,
+            probability = 1
+        });
 
         return pack;
     }
@@ -133,7 +167,12 @@ public record VariationPack
                 {
                     var elem = new ColorVariation
                     {
-                        m_ColorSet = new ColorSet(e.color),
+                        m_ColorSet = new ColorSet()
+                        {
+                            m_Channel0 = e.color1,
+                            m_Channel1 = e.color2,
+                            m_Channel2 = e.color3,
+                        },
                         m_Probability = e.probability
                     };
                     buffer.Add(elem);
@@ -146,7 +185,12 @@ public record VariationPack
         {
             var elem = new ColorVariation
             {
-                m_ColorSet = new ColorSet(e.color),
+                m_ColorSet = new ColorSet()
+                {
+                    m_Channel0 = e.color1,
+                    m_Channel1 = e.color2,
+                    m_Channel2 = e.color3,
+                },
                 m_Probability = e.probability
             };
             buffer.Add(elem);
@@ -156,7 +200,7 @@ public record VariationPack
     public static VariationPack Load(string name)
     {
         var modPath = Path.GetDirectoryName(Mod.path);
-        var path = Path.Combine(modPath, "Resources", name + ".json");
+        var path = Path.Combine(modPath, "Resources", "packs", name + ".json");
         if (!File.Exists(path))
             return null;
 
@@ -166,9 +210,8 @@ public record VariationPack
 
     public void Save()
     {
-        // Save data to json
         var modPath = Path.GetDirectoryName(Mod.path);
-        var path = Path.Combine(modPath, "Resources", Name + ".json");
+        var path = Path.Combine(modPath, "Resources", "packs", Name + ".json");
         if (!Directory.Exists(Path.GetDirectoryName(path)))
             Directory.CreateDirectory(Path.GetDirectoryName(path));
 
@@ -186,7 +229,9 @@ public record VariationPack
         {
             entries.Add(new Entry
             {
-                color = cv.m_ColorSet[0],
+                color1 = cv.m_ColorSet[0],
+                color2 = cv.m_ColorSet[1],
+                color3 = cv.m_ColorSet[2],
                 probability = cv.m_Probability
             });
         }

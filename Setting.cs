@@ -5,6 +5,7 @@ using Game.Settings;
 using Game.UI;
 using Game.UI.Widgets;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 
 namespace CarColorChanger
 {
@@ -38,7 +39,8 @@ namespace CarColorChanger
         [SettingsUISection(kSection, kSliderGroup)]
         public int IntSlider { get; set; }
 
-        /*private string _packDropdown;
+        private string _packDropdown = "Vanilla";
+
         [SettingsUIDropdown(typeof(Setting), nameof(GetNameDropdownItems))]
         [SettingsUISection(kSection, kDropdownGroup)]
         public string PackDropdown
@@ -71,7 +73,7 @@ namespace CarColorChanger
                 });
             }
             return items.ToArray();
-        }*/
+        }
 
         public override void SetDefaults()
         {
@@ -119,11 +121,11 @@ namespace CarColorChanger
                     $"Use int property with getter and setter and [{nameof(SettingsUISliderAttribute)}] to get int slider"
                 },
 
-                /*{ m_Setting.GetOptionLabelLocaleID(nameof(Setting.PackDropdown)), "Int dropdown" },
+                { m_Setting.GetOptionLabelLocaleID(nameof(Setting.PackDropdown)), "Active Pack" },
                 {
                     m_Setting.GetOptionDescLocaleID(nameof(Setting.PackDropdown)),
-                    $"Use int property with getter and setter and [{nameof(SettingsUIDropdownAttribute)}(typeof(SomeType), nameof(SomeMethod))] to get int dropdown: Method must be static or instance of your setting class with 0 parameters and returns {typeof(DropdownItem<int>).Name}"
-                },*/
+                    $"Choose which Variation Pack to use"
+                },
             };
         }
 
