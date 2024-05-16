@@ -13,13 +13,14 @@ namespace CarColorChanger
             .SetShowsErrorsInUI(false);
 
         private Setting m_Setting;
+        public static string path;
 
         public void OnLoad(UpdateSystem updateSystem)
         {
             log.Info(nameof(OnLoad));
 
             if (GameManager.instance.modManager.TryGetExecutableAsset(this, out var asset))
-                log.Info($"Current mod asset at {asset.path}");
+                path = asset.path;
 
             m_Setting = new Setting(this);
             m_Setting.RegisterInOptionsUI();

@@ -60,50 +60,9 @@ namespace CarColorChanger
             }
         }
 
-        public static void UpdatePrefabsManually()
+        public static void UpdateEntitiesManually()
         {
             Instance.UpdateEntities();
-        }
-
-        private void UpdatePrefabs()
-        {
-            EntityQueryDesc desc = new EntityQueryDesc
-            {
-                Any =
-                [
-                    ComponentType.ReadOnly<PersonalCarData>(),
-                ],
-                All =
-                [
-                    ComponentType.ReadOnly<VehicleData>(),
-                    ComponentType.ReadOnly<CarData>(),
-                ]
-            };
-            query = GetEntityQuery(desc);
-
-
-            var entities = query.ToEntityArray(Allocator.Temp);
-            foreach (var entity in entities)
-            {
-                if (prefabSystem.TryGetPrefab(entity, out PrefabBase prefabBase))
-                {
-                    if (prefabBase is CarPrefab prefab)
-                    {
-                        if (prefab.m_Meshes.Length == 0)
-                            continue;
-                        var mesh = prefab.m_Meshes[0].m_Mesh;
-                        var colorProperties = mesh.GetComponent<ColorProperties>();
-                        colorProperties.m_ColorVariations =
-                        [
-                            new ColorProperties.VariationSet()
-                            {
-                                m_Colors = [Color.red, Color.red, Color.red]
-                            }
-                        ];
-                        prefabSystem.UpdatePrefab(prefab);
-                    }
-                }
-            }
         }
 
         private void UpdateEntities()
@@ -117,6 +76,7 @@ namespace CarColorChanger
             };
             query = GetEntityQuery(desc);
             var entities = query.ToEntityArray(Allocator.Temp);
+            VariationPack pack = new VariationPack();
             foreach (var entity in entities)
             {
                 if (EntityManager.HasBuffer<SubMesh>(entity))
@@ -127,23 +87,27 @@ namespace CarColorChanger
                     if (subMesh[0].m_SubMesh != Entity.Null && EntityManager.HasBuffer<ColorVariation>(subMesh[0].m_SubMesh))
                     {
                         var colorVariations = EntityManager.GetBuffer<ColorVariation>(subMesh[0].m_SubMesh);
-                        //VariationPack.SaveDefault(colorVariations);
-                        /*colorVariations.Clear();
-                        colorVariations.Add(new ColorVariation()
-                        {
-                            m_ColorSet = new ColorSet(Color.black)
-                        });*/
+                        var prefabName = prefabSystem.GetPrefabName(entity);
+                        pack.SavePrefabVariations(prefabName, colorVariations);
 
-                        _currentVariationPack.FillColorVariations(ref colorVariations);
-
+                        _currentVariationPack.FillColorVariations(prefabName, ref colorVariations);
                     }
                 }
             }
+
+            pack.Name = "Default";
+            pack.Save();
         }
 
         protected override void OnUpdate()
         {
 
+        }
+
+        public static void LoadVariationPack(string value)
+        {
+            Instance._currentVariationPack = VariationPack.Load(value);
+            UpdateEntitiesManually();
         }
     }
 

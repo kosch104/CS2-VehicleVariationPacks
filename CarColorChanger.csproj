@@ -25,6 +25,9 @@
     <Import Project="$([System.Environment]::GetEnvironmentVariable('CSII_TOOLPATH', 'EnvironmentVariableTarget.User'))\Mod.targets"/>
 
     <ItemGroup>
+        <Reference Include="Colossal.PSI.Common">
+          <HintPath>D:\Games\steamapps\common\Cities Skylines II\Cities2_Data\Managed\Colossal.PSI.Common.dll</HintPath>
+        </Reference>
         <Reference Include="Game">
             <Private>false</Private>
         </Reference>
@@ -45,6 +48,9 @@
         </Reference>
         <Reference Include="Colossal.Localization">
             <Private>false</Private>
+        </Reference>
+        <Reference Include="Newtonsoft.Json">
+          <HintPath>D:\Games\steamapps\common\Cities Skylines II\Cities2_Data\Managed\Newtonsoft.Json.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.CoreModule">
             <Private>false</Private>

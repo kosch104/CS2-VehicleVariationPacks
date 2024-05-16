@@ -25,18 +25,11 @@ namespace CarColorChanger
         }
 
         [SettingsUISection(kSection, kButtonGroup)]
-        public bool Button
+        public bool UpdateEntities
         {
-            set { CarColorChangerSystem.UpdatePrefabsManually(); }
+            set { CarColorChangerSystem.UpdateEntitiesManually(); }
         }
 
-        [SettingsUIButton]
-        [SettingsUIConfirmation]
-        [SettingsUISection(kSection, kButtonGroup)]
-        public bool ButtonWithConfirmation
-        {
-            set { Mod.log.Info("ButtonWithConfirmation clicked"); }
-        }
 
         [SettingsUISection(kSection, kToggleGroup)]
         public bool Toggle { get; set; }
@@ -45,39 +38,44 @@ namespace CarColorChanger
         [SettingsUISection(kSection, kSliderGroup)]
         public int IntSlider { get; set; }
 
-        [SettingsUIDropdown(typeof(Setting), nameof(GetIntDropdownItems))]
+        /*private string _packDropdown;
+        [SettingsUIDropdown(typeof(Setting), nameof(GetNameDropdownItems))]
         [SettingsUISection(kSection, kDropdownGroup)]
-        public int IntDropdown { get; set; }
-
-        [SettingsUISection(kSection, kDropdownGroup)]
-        public SomeEnum EnumDropdown { get; set; } = SomeEnum.Value1;
-
-        public DropdownItem<int>[] GetIntDropdownItems()
+        public string PackDropdown
         {
-            var items = new List<DropdownItem<int>>();
-
-            for (var i = 0; i < 3; i += 1)
+            get
             {
-                items.Add(new DropdownItem<int>()
+                return _packDropdown;
+            }
+            set
+            {
+                _packDropdown = value;
+                if (value != null)
                 {
-                    value = i,
-                    displayName = i.ToString(),
+                    CarColorChangerSystem.LoadVariationPack(value);
+                }
+            }
+        }
+
+        public DropdownItem<string>[] GetNameDropdownItems()
+        {
+            var names =  VariationPack.GetVariationPackNames();
+
+            List<DropdownItem<string>> items = new List<DropdownItem<string>>();
+            foreach(string s in names)
+            {
+                items.Add(new DropdownItem<string>()
+                {
+                    value = s,
+                    displayName = s,
                 });
             }
-
             return items.ToArray();
-        }
+        }*/
 
         public override void SetDefaults()
         {
             throw new System.NotImplementedException();
-        }
-
-        public enum SomeEnum
-        {
-            Value1,
-            Value2,
-            Value3,
         }
     }
 
@@ -103,22 +101,10 @@ namespace CarColorChanger
                 { m_Setting.GetOptionGroupLocaleID(Setting.kSliderGroup), "Sliders" },
                 { m_Setting.GetOptionGroupLocaleID(Setting.kDropdownGroup), "Dropdowns" },
 
-                { m_Setting.GetOptionLabelLocaleID(nameof(Setting.Button)), "Button" },
+                { m_Setting.GetOptionLabelLocaleID(nameof(Setting.UpdateEntities)), "Button" },
                 {
-                    m_Setting.GetOptionDescLocaleID(nameof(Setting.Button)),
+                    m_Setting.GetOptionDescLocaleID(nameof(Setting.UpdateEntities)),
                     $"Simple single button. It should be bool property with only setter or use [{nameof(SettingsUIButtonAttribute)}] to make button from bool property with setter and getter"
-                },
-
-                {
-                    m_Setting.GetOptionLabelLocaleID(nameof(Setting.ButtonWithConfirmation)), "Button with confirmation"
-                },
-                {
-                    m_Setting.GetOptionDescLocaleID(nameof(Setting.ButtonWithConfirmation)),
-                    $"Button can show confirmation message. Use [{nameof(SettingsUIConfirmationAttribute)}]"
-                },
-                {
-                    m_Setting.GetOptionWarningLocaleID(nameof(Setting.ButtonWithConfirmation)),
-                    "is it confirmation text which you want to show here?"
                 },
 
                 { m_Setting.GetOptionLabelLocaleID(nameof(Setting.Toggle)), "Toggle" },
@@ -133,21 +119,11 @@ namespace CarColorChanger
                     $"Use int property with getter and setter and [{nameof(SettingsUISliderAttribute)}] to get int slider"
                 },
 
-                { m_Setting.GetOptionLabelLocaleID(nameof(Setting.IntDropdown)), "Int dropdown" },
+                /*{ m_Setting.GetOptionLabelLocaleID(nameof(Setting.PackDropdown)), "Int dropdown" },
                 {
-                    m_Setting.GetOptionDescLocaleID(nameof(Setting.IntDropdown)),
+                    m_Setting.GetOptionDescLocaleID(nameof(Setting.PackDropdown)),
                     $"Use int property with getter and setter and [{nameof(SettingsUIDropdownAttribute)}(typeof(SomeType), nameof(SomeMethod))] to get int dropdown: Method must be static or instance of your setting class with 0 parameters and returns {typeof(DropdownItem<int>).Name}"
-                },
-
-                { m_Setting.GetOptionLabelLocaleID(nameof(Setting.EnumDropdown)), "Simple enum dropdown" },
-                {
-                    m_Setting.GetOptionDescLocaleID(nameof(Setting.EnumDropdown)),
-                    $"Use any enum property with getter and setter to get enum dropdown"
-                },
-
-                { m_Setting.GetEnumValueLocaleID(Setting.SomeEnum.Value1), "Value 1" },
-                { m_Setting.GetEnumValueLocaleID(Setting.SomeEnum.Value2), "Value 2" },
-                { m_Setting.GetEnumValueLocaleID(Setting.SomeEnum.Value3), "Value 3" },
+                },*/
             };
         }
 
