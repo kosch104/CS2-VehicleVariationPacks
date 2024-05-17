@@ -22,7 +22,7 @@ namespace CarVariationChanger
             set { CarVariationChangerSystem.Instance.UpdateEntityInstances(); }
         }
 
-        private string _packDropdown = "Vanilla Rebalance";
+        private string _packDropdown = "Realistic";
 
         [SettingsUIDropdown(typeof(Setting), nameof(GetNameDropdownItems))]
         public string PackDropdown
