@@ -22,7 +22,7 @@ namespace CarVariationChanger
             set { CarVariationChangerSystem.Instance.UpdateEntityInstances(); }
         }
 
-        private string _packDropdown = "Realistic";
+        private string _packDropdown = "Realistic Global";
 
         [SettingsUIDropdown(typeof(Setting), nameof(GetNameDropdownItems))]
         public string PackDropdown
@@ -77,7 +77,7 @@ namespace CarVariationChanger
         {
             return new Dictionary<string, string>
             {
-                { m_Setting.GetSettingsLocaleID(), "Car Color Changer" },
+                { m_Setting.GetSettingsLocaleID(), "Car Variation Changer" },
 
                 { m_Setting.GetOptionLabelLocaleID(nameof(Setting.UpdateEntities)), "Reload active Pack" },
                 {

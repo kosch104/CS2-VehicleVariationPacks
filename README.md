@@ -2,7 +2,7 @@
 This mod allows you to load custom variations for vehicle colors, reflecting a more realistic distribution. Currently, there are 3 preinstalled packs:
 
 
-- **Realistic** - A more realistic distribution of colors. Generalized for all vehicles
+- **Realistic Global** - A more realistic distribution of colors. Generalized for all vehicles, based on real world data
 - **Vanilla** - The default game colors
 - **Vanilla Rebalance** - A rebalanced version of the default colors with changed distributions
 
