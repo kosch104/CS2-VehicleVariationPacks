@@ -2,32 +2,48 @@
 	<!--Id must be set in order to update existed mod. it is not required for publishing mod for the first time-->
 	<ModId Value="" />
 	<!--Name of the mod to display to players-->
-	<DisplayName Value="CarVariationChanger" />
+	<DisplayName Value="Car Variation Changer" />
 	<!--Short description of the mod-->
-	<ShortDescription Value="This is a short description" />
+	<ShortDescription Value="Allows you to load custom variations for vehicle colors, reflecting a more realistic distribution" />
 	<!--Long description of the mod. Single line or multi line. Supports minimal markdown subset-->
 	<!--LongDescription Value="This is a long description" /-->
 	<LongDescription>
-This is a long description
+# Car Variation Changer
+This mod allows you to load custom variations for vehicle colors, reflecting a more realistic distribution. Currently, there are 3 preinstalled packs:
+
+
+- **Realistic** - A more realistic distribution of colors. Generalized for all vehicles
+- **Vanilla** - The default game colors
+- **Vanilla Rebalance** - A rebalanced version of the default colors with changed distributions
+
+# Features
+- Affects Colors of Personal Vehicles, Parked Vehicles, Motorcycles, and Scooters
+- Supports user-created variation packs (create json files in mod folder)
+- Change active variation in the mod settings during gameplay, no reload/restart required
+
+# Acknowledgement
+Thanks to **krzychu124** for helping me with the first steps of accessing vehicle color.
 	</LongDescription>
 	<!--Thumbnail-->
 	<Thumbnail Value="Properties/Thumbnail.png" />
 	<!--Screenshot, can be set multiple times-->
 	<Screenshot Value="Properties/Wallpaper.jpg" />
 	<!--Tag, can be set multiple times-->
-	<Tag Value="" />
+	<Tag Value="Code Mod" />
 	<!--Link to the forum post where the mod can be discussed-->
 	<ForumLink Value="" />
 	<!--Version of the mod-->
-	<ModVersion Value="1.0" />
+	<ModVersion Value="1.0.0" />
 	<!--Recommended version of the base game to use the mod-->
-	<GameVersion Value="1.0.*" />
+	<GameVersion Value="1.1.*" />
 	<!--Dependency for the mod, can be set multiple times-->
 	<Dependency Id="" />
 	<!--Change log for new version. Single line or multi line. Supports minimal markdown subset-->
-	<ChangeLog Value="" />
-	<!--ChangeLog>
-	</ChangeLog-->
+	<ChangeLog>
+- Initial Release
+	</ChangeLog>
 	<!--External link. supported types are discord, github, youtube, twitch, x, paypal, patreon-->
-	<ExternalLink Type="" Url="" />
+	<ExternalLink Type="github" Url="https://github.com/kosch104/CS2-ExtraNetworksAndAreas" />
+	<ExternalLink Type="discord" Url="https://discord.gg/vd7HXnpPJf" />
+	<ExternalLink Type="paypal" Url="https://www.paypal.com/paypalme/KonstantinSchwarze" />
 </Publish>
