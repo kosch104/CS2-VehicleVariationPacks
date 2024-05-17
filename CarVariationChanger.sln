@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarColorChanger", "CarColorChanger.csproj", "{49A14345-99F3-416A-9981-8C03411B7019}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarVariationChanger", "CarVariationChanger.csproj", "{49A14345-99F3-416A-9981-8C03411B7019}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

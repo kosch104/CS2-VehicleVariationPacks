@@ -5,11 +5,11 @@ using Game.SceneFlow;
 using Game.SceneFlow;
 using Colossal.IO.AssetDatabase;
 
-namespace CarColorChanger
+namespace CarVariationChanger
 {
     public class Mod : IMod
     {
-        public static ILog log = LogManager.GetLogger($"{nameof(CarColorChanger)}.{nameof(Mod)}")
+        public static ILog log = LogManager.GetLogger($"{nameof(CarVariationChanger)}.{nameof(Mod)}")
             .SetShowsErrorsInUI(false);
 
         private Setting m_Setting;
@@ -22,13 +22,13 @@ namespace CarColorChanger
             if (GameManager.instance.modManager.TryGetExecutableAsset(this, out var asset))
                 path = asset.path;
 
-            updateSystem.UpdateAt<CarColorChangerSystem>(SystemUpdatePhase.MainLoop);
+            updateSystem.UpdateAt<CarVariationChangerSystem>(SystemUpdatePhase.MainLoop);
 
             m_Setting = new Setting(this);
             m_Setting.RegisterInOptionsUI();
             GameManager.instance.localizationManager.AddSource("en-US", new LocaleEN(m_Setting));
 
-            AssetDatabase.global.LoadSettings(nameof(CarColorChanger), m_Setting, new Setting(this));
+            AssetDatabase.global.LoadSettings(nameof(CarVariationChanger), m_Setting, new Setting(this));
         }
 
         public void OnDispose()

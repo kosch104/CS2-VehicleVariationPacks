@@ -14,9 +14,9 @@ using Unity.Entities;
 using UnityEngine;
 using PersonalCar = Game.Vehicles.PersonalCar;
 
-namespace CarColorChanger
+namespace CarVariationChanger
 {
-    public partial class CarColorChangerSystem : GameSystemBase
+    public partial class CarVariationChangerSystem : GameSystemBase
     {
         private static ILog Logger;
 
@@ -24,7 +24,7 @@ namespace CarColorChanger
 
         //private UIUpdateState uiUpdateState;
         private PrefabSystem prefabSystem;
-        public static CarColorChangerSystem Instance { get; private set; }
+        public static CarVariationChangerSystem Instance { get; private set; }
         private VariationPack _currentVariationPack;
 
         protected override void OnCreate()

@@ -7,9 +7,9 @@ using Game.UI.Widgets;
 using System.Collections.Generic;
 using JetBrains.Annotations;
 
-namespace CarColorChanger
+namespace CarVariationChanger
 {
-    [FileLocation(nameof(CarColorChanger))]
+    [FileLocation(nameof(CarVariationChanger))]
     public class Setting : ModSetting
     {
 
@@ -19,7 +19,7 @@ namespace CarColorChanger
 
         public bool UpdateEntities
         {
-            set { CarColorChangerSystem.Instance.UpdateEntityInstances(); }
+            set { CarVariationChangerSystem.Instance.UpdateEntityInstances(); }
         }
 
         private string _packDropdown = "Vanilla Rebalance";
@@ -36,7 +36,7 @@ namespace CarColorChanger
                 _packDropdown = value;
                 if (value != null)
                 {
-                    CarColorChangerSystem.Instance.LoadVariationPack(value);
+                    CarVariationChangerSystem.Instance.LoadVariationPack(value);
                 }
             }
         }

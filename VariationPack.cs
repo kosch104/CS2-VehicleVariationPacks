@@ -7,7 +7,7 @@ using Newtonsoft.Json;
 using Unity.Entities;
 using UnityEngine;
 
-namespace CarColorChanger;
+namespace CarVariationChanger;
 
 public record PrefabEntry
 {
