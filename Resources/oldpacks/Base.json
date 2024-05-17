@@ -1,0 +1,19 @@
+{
+  "Name": "EuropeanCars",
+  "Entries": {
+    "default": [
+      {
+        "color1": "FFFFFF",
+        "color2": "FFFFFF",
+        "color3": "FFFFFF",
+        "probability": 200
+      },
+      {
+        "color1": "1F1F1F",
+        "color2": "1F1F1F",
+        "color3": "1F1F1F",
+        "probability": 150
+      }
+    ]
+  }
+}

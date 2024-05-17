@@ -488,13 +488,13 @@
         "color1": "5589A8",
         "color2": "FFFFFF",
         "color3": "FFFFFF",
-        "probability": 50
+        "probability": 20
       },
       {
         "color1": "D9BA34",
         "color2": "FFFFFF",
         "color3": "FFFFFF",
-        "probability": 40
+        "probability": 20
       }
     ],
     "Car09": [
@@ -582,7 +582,7 @@
         "color1": "FFCD2F",
         "color2": "FFCD2F",
         "color3": "FFFFFF",
-        "probability": 40
+        "probability": 30
       },
       {
         "color1": "60DBFF",
@@ -612,7 +612,7 @@
         "color1": "FFC900",
         "color2": "626262",
         "color3": "FFFFFF",
-        "probability": 80
+        "probability": 60
       },
       {
         "color1": "6DABFF",
@@ -626,7 +626,7 @@
         "color1": "5B5B5B",
         "color2": "735E54",
         "color3": "FFFFFF",
-        "probability": 100
+        "probability": 250
       },
       {
         "color1": "D93830",
@@ -638,7 +638,7 @@
         "color1": "454545",
         "color2": "838383",
         "color3": "FFFFFF",
-        "probability": 100
+        "probability": 250
       },
       {
         "color1": "8C6656",
@@ -688,13 +688,13 @@
         "color1": "FFFFFF",
         "color2": "FFFFFF",
         "color3": "FFFFFF",
-        "probability": 100
+        "probability": 250
       },
       {
         "color1": "363636",
         "color2": "5E5E5E",
         "color3": "FFFFFF",
-        "probability": 100
+        "probability": 250
       }
     ],
     "MuscleCar01": [
@@ -1012,19 +1012,19 @@
         "color1": "5B5B5B",
         "color2": "FFFFFF",
         "color3": "FFFFFF",
-        "probability": 100
+        "probability": 200
       },
       {
         "color1": "FF3D3D",
         "color2": "FFFFFF",
         "color3": "FFFFFF",
-        "probability": 100
+        "probability": 60
       },
       {
         "color1": "30B72C",
         "color2": "FFFFFF",
         "color3": "FFFFFF",
-        "probability": 100
+        "probability": 60
       },
       {
         "color1": "FFFFFF",

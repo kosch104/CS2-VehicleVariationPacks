@@ -72,19 +72,25 @@
         "color1": "616DFF",
         "color2": "616DFF",
         "color3": "616DFF",
-        "probability": 12
+        "probability": 8
       },
       {
-        "color1": "3113FF",
-        "color2": "3113FF",
-        "color3": "3113FF",
+        "color1": "2F13C6",
+        "color2": "2F13C6",
+        "color3": "2F13C6",
+        "probability": 3
+      },
+      {
+        "color1": "220E99",
+        "color2": "220E99",
+        "color3": "220E99",
+        "probability": 4
+      },
+      {
+        "color1": "9D8DFF",
+        "color2": "9D8DFF",
+        "color3": "9D8DFF",
         "probability": 5
-      },
-      {
-        "color1": "8C7DFF",
-        "color2": "8C7DFF",
-        "color3": "8C7DFF",
-        "probability": 6
       },
 
       {

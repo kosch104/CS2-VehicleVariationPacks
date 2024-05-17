@@ -103,12 +103,13 @@ public record VariationPack
             return new List<string>();
 
         var files = Directory.GetFiles(path, "*.json");
-        List<string> names = new List<string>()
+        List<string> names = new List<string>();
+        /*List<string> names = new List<string>()
         {
             "debug_Default",
             "debug_CrazyColors",
             "debug_Test"
-        };
+        };*/
         foreach (var file in files)
         {
             var name = Path.GetFileNameWithoutExtension(file);
