@@ -47,7 +47,7 @@ namespace CarVariationChanger
             SaveDefaultVariations();
             if (_currentVariationPack == null)
             {
-                _currentVariationPack = VariationPack.Test();
+                _currentVariationPack = VariationPack.Load(Setting.Instance.PackDropdown);
             }
         }
 

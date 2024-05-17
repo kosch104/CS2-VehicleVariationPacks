@@ -12,9 +12,10 @@ namespace CarVariationChanger
     [FileLocation(nameof(CarVariationChanger))]
     public class Setting : ModSetting
     {
-
+        public static Setting Instance;
         public Setting(IMod mod) : base(mod)
         {
+            Instance = this;
         }
 
         public bool UpdateEntities
