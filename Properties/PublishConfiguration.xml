@@ -40,7 +40,7 @@ Thanks to **krzychu124** for helping me with the first steps of accessing vehicl
 	<Dependency Id="" />
 	<!--Change log for new version. Single line or multi line. Supports minimal markdown subset-->
 	<ChangeLog>
-- Fix object reference exception on startup
+- Add Settings Migration
 	</ChangeLog>
 	<!--External link. supported types are discord, github, youtube, twitch, x, paypal, patreon-->
 	<ExternalLink Type="github" Url="https://github.com/kosch104/CS2-CarVariationChanger" />

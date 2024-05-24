@@ -38,7 +38,7 @@ namespace CarVariationChanger
             {
                 Any =
                 [
-                    ComponentType.ReadOnly<PersonalCarData>(),
+                    ComponentType.ReadOnly<CarData>(),
                 ]
             };
             query = GetEntityQuery(desc);
