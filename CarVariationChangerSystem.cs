@@ -47,7 +47,12 @@ namespace CarVariationChanger
             SaveDefaultVariations();
             if (_currentVariationPack == null)
             {
-                _currentVariationPack = VariationPack.Load(Setting.Instance.PackDropdown);
+                string pack = "Realistic Global";
+                if (Setting.Instance != null)
+                {
+                    pack = Setting.Instance.PackDropdown;
+                }
+                _currentVariationPack = VariationPack.Load(pack);
             }
         }
 
@@ -76,8 +81,8 @@ namespace CarVariationChanger
                     ComponentType.ReadOnly<ParkedCar>(),
                 ]
             };
-            var ûpdateQuery = GetEntityQuery(desc);
-            foreach (var entity in ûpdateQuery.ToEntityArray(Allocator.Temp))
+            var updateQuery = GetEntityQuery(desc);
+            foreach (var entity in updateQuery.ToEntityArray(Allocator.Temp))
             {
                 EntityManager.AddComponent<BatchesUpdated>(entity);
             }

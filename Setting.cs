@@ -15,7 +15,7 @@ namespace CarVariationChanger
         public static Setting Instance;
         public Setting(IMod mod) : base(mod)
         {
-            Instance = this;
+
         }
 
         public bool UpdateEntities
