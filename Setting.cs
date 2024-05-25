@@ -5,7 +5,8 @@ using Game.Settings;
 using Game.UI;
 using Game.UI.Widgets;
 using System.Collections.Generic;
-using JetBrains.Annotations;
+using System.Diagnostics;
+using System.IO;
 
 namespace CarVariationChanger
 {
@@ -18,9 +19,23 @@ namespace CarVariationChanger
 
         }
 
-        public bool UpdateEntities
+        public bool OpenPacksFolder
         {
-            set { CarVariationChangerSystem.Instance.UpdateEntityInstances(); }
+            set
+            {
+                var file = Mod.path;
+                var parentDir = Directory.GetParent(file).FullName;
+                Process.Start(Path.Combine(parentDir, "packs"));
+            }
+        }
+
+        public bool ReloadPacks
+        {
+            set
+            {
+                this.UnregisterInOptionsUI();
+                this.RegisterInOptionsUI();
+            }
         }
 
         private string _packDropdown = "Realistic Global";
@@ -55,6 +70,7 @@ namespace CarVariationChanger
                     displayName = s,
                 });
             }
+
             return items.ToArray();
         }
 
@@ -80,17 +96,23 @@ namespace CarVariationChanger
             {
                 { m_Setting.GetSettingsLocaleID(), "Car Variation Changer" },
 
-                { m_Setting.GetOptionLabelLocaleID(nameof(Setting.UpdateEntities)), "Reload active Pack" },
+                { m_Setting.GetOptionLabelLocaleID(nameof(Setting.OpenPacksFolder)), "Open Packs Folder" },
                 {
-                    m_Setting.GetOptionDescLocaleID(nameof(Setting.UpdateEntities)),
-                    $"This button doesn't do anyting yet, but it will reload the active pack. Probably."
+                    m_Setting.GetOptionDescLocaleID(nameof(Setting.OpenPacksFolder)),
+                    $"Opens the folder where the packs are stored, allowing you to add your own"
+                },
+
+                { m_Setting.GetOptionLabelLocaleID(nameof(Setting.ReloadPacks)), "Reload available Packs" },
+                {
+                    m_Setting.GetOptionDescLocaleID(nameof(Setting.ReloadPacks)),
+                    $"Reloads the available packs installed in your packs folder"
                 },
 
 
                 { m_Setting.GetOptionLabelLocaleID(nameof(Setting.PackDropdown)), "Active Pack" },
                 {
                     m_Setting.GetOptionDescLocaleID(nameof(Setting.PackDropdown)),
-                    $"Choose which Variation Pack to use"
+                    $"Choose which Variation Pack to use. If you manually installed a pack and it is not displayed here, click on 'Reload available Packs' to refresh the list"
                 },
             };
         }

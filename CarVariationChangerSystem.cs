@@ -113,6 +113,8 @@ namespace CarVariationChanger
 
         private void UpdateEntities()
         {
+            if (_currentVariationPack == null)
+                _currentVariationPack = VariationPack.Load("Vanilla");
             var entities = query.ToEntityArray(Allocator.Temp);
             foreach (var entity in entities)
             {
