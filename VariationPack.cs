@@ -41,7 +41,7 @@ public record VariationPack
     {
 
     }
-
+    // TODO: Change save location to ModsData folder
     public static VariationPack Default()
     {
         VariationPack pack = new VariationPack();
