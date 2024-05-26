@@ -1,5 +1,5 @@
 {
-  "Name": "Vanilla",
+  "Name": "German Vehicle Pack",
   "Entries": {
     "TruckTrailer02": [
       {
@@ -86,7 +86,7 @@
         "color1": "A33131",
         "color2": "7D7D7D",
         "color3": "496B90",
-        "probability": 100
+        "probability": 44
       }
     ],
     "TractorTrailer01": [
@@ -94,7 +94,7 @@
         "color1": "DD4242",
         "color2": "7D7D7D",
         "color3": "C0C0C0",
-        "probability": 100
+        "probability": 15
       }
     ],
     "TractorTrailer03": [
@@ -102,12 +102,12 @@
         "color1": "DD4242",
         "color2": "7D7D7D",
         "color3": "DD4242",
-        "probability": 100
+        "probability": 15
       }
     ],
     "Taxi01": [
       {
-        "color1": "FDB813",
+        "color1": "FDEFCF",
         "color2": "000000",
         "color3": "FFFFFF",
         "probability": 100
@@ -115,7 +115,7 @@
     ],
     "Taxi02": [
       {
-        "color1": "FDB813",
+        "color1": "FDEFCF",
         "color2": "000000",
         "color3": "000000",
         "probability": 100
@@ -123,7 +123,7 @@
     ],
     "RoadMaintenanceVehicle01": [
       {
-        "color1": "FFCF00",
+        "color1": "F7B500",
         "color2": "FFFFFF",
         "color3": "FFFFFF",
         "probability": 100
@@ -139,8 +139,8 @@
     ],
     "ParkMaintenanceVehicle01": [
       {
-        "color1": "DDBE95",
-        "color2": "575757",
+        "color1": "2D5546",
+        "color2": "55462D",
         "color3": "FFFFFF",
         "probability": 100
       }
@@ -155,7 +155,7 @@
     ],
     "OreMiningTruck01": [
       {
-        "color1": "D49E3F",
+        "color1": "434343",
         "color2": "414141",
         "color3": "DD3A3A",
         "probability": 100
@@ -163,7 +163,7 @@
     ],
     "OilTruck01": [
       {
-        "color1": "FFFFFF",
+        "color1": "FFCF1D",
         "color2": "FFFFFF",
         "color3": "FFFFFF",
         "probability": 100
@@ -175,13 +175,13 @@
         "probability": 100
       },
       {
-        "color1": "704A4A",
+        "color1": "161616",
         "color2": "FFFFFF",
         "color3": "FFFFFF",
         "probability": 100
       },
       {
-        "color1": "736654",
+        "color1": "323232",
         "color2": "FFFFFF",
         "color3": "FFFFFF",
         "probability": 100
@@ -193,7 +193,7 @@
         "probability": 100
       },
       {
-        "color1": "3A3A3A",
+        "color1": "454444",
         "color2": "FFFFFF",
         "color3": "FFFFFF",
         "probability": 100
@@ -241,15 +241,21 @@
     ],
     "GarbageTruck01": [
       {
-        "color1": "DDDDDD",
+        "color1": "DB6C2F",
+        "color2": "656565",
+        "color3": "DB6C2F",
+        "probability": 100
+      },
+      {
+        "color1": "4B6951",
         "color2": "656565",
         "color3": "4B6951",
-        "probability": 100
+        "probability": 50
       }
     ],
     "FrontendLoaderTrailer01": [
       {
-        "color1": "466074",
+        "color1": "575555",
         "color2": "6A6A6A",
         "color3": "A9A9A9",
         "probability": 100
@@ -257,7 +263,7 @@
     ],
     "OreMiningTractorTrailer01": [
       {
-        "color1": "FFBF4C",
+        "color1": "27221C",
         "color2": "6A6A6A",
         "color3": "FFFFFF",
         "probability": 100
@@ -265,7 +271,7 @@
     ],
     "ForestHarvesterTrailer01": [
       {
-        "color1": "81B3D5",
+        "color1": "213A22",
         "color2": "FFFFFF",
         "color3": "FFFFFF",
         "probability": 100
@@ -357,7 +363,7 @@
         "probability": 100
       },
       {
-        "color1": "567D5A",
+        "color1": "334B36",
         "color2": "747474",
         "color3": "C0C0C0",
         "probability": 100
@@ -369,13 +375,13 @@
         "probability": 100
       },
       {
-        "color1": "D9AE24",
-        "color2": "D9AE24",
+        "color1": "0E1A40",
+        "color2": "0E1A40",
         "color3": "787878",
         "probability": 100
       },
       {
-        "color1": "5D8DB2",
+        "color1": "708090",
         "color2": "989898",
         "color3": "FFFFFF",
         "probability": 100
@@ -436,55 +442,55 @@
         "color1": "CA4444",
         "color2": "FFFFFF",
         "color3": "FFFFFF",
-        "probability": 100
+        "probability": 10
       },
       {
-        "color1": "39A7C0",
+        "color1": "274585",
         "color2": "FFFFFF",
         "color3": "FFFFFF",
-        "probability": 100
+        "probability": 10
       },
       {
         "color1": "A4A4A4",
         "color2": "FFFFFF",
         "color3": "FFFFFF",
-        "probability": 100
+        "probability": 80
       },
       {
         "color1": "484848",
         "color2": "FFFFFF",
         "color3": "FFFFFF",
-        "probability": 100
+        "probability": 80
       },
       {
         "color1": "FFD700",
         "color2": "FFFFFF",
         "color3": "FFFFFF",
-        "probability": 100
+        "probability": 5
       },
       {
         "color1": "7BB2A5",
         "color2": "FFFFFF",
         "color3": "FFFFFF",
-        "probability": 100
+        "probability": 5
       },
       {
-        "color1": "B4DDFF",
+        "color1": "1A6AA3",
         "color2": "FFFFFF",
         "color3": "FFFFFF",
-        "probability": 100
+        "probability": 5
       },
       {
-        "color1": "8D8171",
+        "color1": "391802",
         "color2": "FFFFFF",
         "color3": "FFFFFF",
-        "probability": 100
+        "probability": 10
       },
       {
         "color1": "FFDEB3",
         "color2": "FFFFFF",
         "color3": "FFFFFF",
-        "probability": 100
+        "probability": 5
       }
     ],
     "Car03": [
@@ -510,43 +516,43 @@
         "color1": "9F5353",
         "color2": "FFFFFF",
         "color3": "FFFFFF",
-        "probability": 100
+        "probability": 5
       },
       {
         "color1": "878272",
         "color2": "FFFFFF",
         "color3": "FFFFFF",
-        "probability": 100
+        "probability": 5
       },
       {
         "color1": "5AA1E7",
         "color2": "FFFFFF",
         "color3": "FFFFFF",
-        "probability": 100
+        "probability": 5
       },
       {
         "color1": "727F90",
         "color2": "FFFFFF",
         "color3": "FFFFFF",
-        "probability": 100
+        "probability": 5
       },
       {
         "color1": "FFD82F",
         "color2": "FFFFFF",
         "color3": "FFFFFF",
-        "probability": 100
+        "probability": 5
       },
       {
         "color1": "B73D3D",
         "color2": "FFFFFF",
         "color3": "FFFFFF",
-        "probability": 100
+        "probability": 5
       },
       {
         "color1": "647764",
         "color2": "FFFFFF",
         "color3": "FFFFFF",
-        "probability": 100
+        "probability": 5
       }
     ],
     "Car04": [
@@ -572,43 +578,43 @@
         "color1": "DD4E4E",
         "color2": "FFFFFF",
         "color3": "FFFFFF",
-        "probability": 100
+        "probability": 5
       },
       {
         "color1": "FADD67",
         "color2": "FFFFFF",
         "color3": "FFFFFF",
-        "probability": 100
+        "probability": 5
       },
       {
         "color1": "91DBDD",
         "color2": "FFFFFF",
         "color3": "FFFFFF",
-        "probability": 100
+        "probability": 5
       },
       {
         "color1": "6CABDD",
         "color2": "FFFFFF",
         "color3": "FFFFFF",
-        "probability": 100
+        "probability": 5
       },
       {
         "color1": "FF5955",
         "color2": "FFFFFF",
         "color3": "FFFFFF",
-        "probability": 100
+        "probability": 5
       },
       {
         "color1": "C9E6FF",
         "color2": "FFFFFF",
         "color3": "FFFFFF",
-        "probability": 100
+        "probability": 5
       },
       {
         "color1": "D4BA97",
         "color2": "FFFFFF",
         "color3": "FFFFFF",
-        "probability": 100
+        "probability": 5
       }
     ],
     "Car05": [
@@ -634,43 +640,43 @@
         "color1": "B24646",
         "color2": "FFFFFF",
         "color3": "FFFFFF",
-        "probability": 100
+        "probability": 5
       },
       {
         "color1": "6FB5C5",
         "color2": "FFFFFF",
         "color3": "FFFFFF",
-        "probability": 100
+        "probability": 5
       },
       {
         "color1": "958578",
         "color2": "FFFFFF",
         "color3": "FFFFFF",
-        "probability": 100
+        "probability": 5
       },
       {
         "color1": "78A9CF",
         "color2": "FFFFFF",
         "color3": "FFFFFF",
-        "probability": 100
+        "probability": 5
       },
       {
         "color1": "FFDB64",
         "color2": "FFFFFF",
         "color3": "FFFFFF",
-        "probability": 100
+        "probability": 5
       },
       {
         "color1": "778777",
         "color2": "FFFFFF",
         "color3": "FFFFFF",
-        "probability": 100
+        "probability": 5
       },
       {
         "color1": "FFE0B6",
         "color2": "FFFFFF",
         "color3": "FFFFFF",
-        "probability": 100
+        "probability": 5
       }
     ],
     "Car06": [
@@ -696,43 +702,43 @@
         "color1": "953838",
         "color2": "FFFFFF",
         "color3": "FFFFFF",
-        "probability": 100
+        "probability": 5
       },
       {
         "color1": "9A8E7C",
         "color2": "FFFFFF",
         "color3": "FFFFFF",
-        "probability": 100
+        "probability": 5
       },
       {
         "color1": "6885A4",
         "color2": "FFFFFF",
         "color3": "FFFFFF",
-        "probability": 100
+        "probability": 5
       },
       {
         "color1": "68736F",
         "color2": "FFFFFF",
         "color3": "FFFFFF",
-        "probability": 100
+        "probability": 5
       },
       {
         "color1": "D2C4A8",
         "color2": "FFFFFF",
         "color3": "FFFFFF",
-        "probability": 100
+        "probability": 5
       },
       {
         "color1": "FFDD72",
         "color2": "FFFFFF",
         "color3": "FFFFFF",
-        "probability": 100
+        "probability": 5
       },
       {
         "color1": "3A6D87",
         "color2": "FFFFFF",
         "color3": "FFFFFF",
-        "probability": 100
+        "probability": 5
       }
     ],
     "Car07": [
@@ -758,43 +764,43 @@
         "color1": "FFCA67",
         "color2": "FFFFFF",
         "color3": "FFFFFF",
-        "probability": 100
+        "probability": 5
       },
       {
         "color1": "64826A",
         "color2": "FFFFFF",
         "color3": "FFFFFF",
-        "probability": 100
+        "probability": 5
       },
       {
         "color1": "62809A",
         "color2": "FFFFFF",
         "color3": "FFFFFF",
-        "probability": 100
+        "probability": 5
       },
       {
         "color1": "E7C945",
         "color2": "FFFFFF",
         "color3": "FFFFFF",
-        "probability": 100
+        "probability": 5
       },
       {
         "color1": "DD424D",
         "color2": "FFFFFF",
         "color3": "FFFFFF",
-        "probability": 100
+        "probability": 5
       },
       {
         "color1": "A3C5C2",
         "color2": "FFFFFF",
         "color3": "FFFFFF",
-        "probability": 100
+        "probability": 5
       },
       {
         "color1": "AEA08C",
         "color2": "FFFFFF",
         "color3": "FFFFFF",
-        "probability": 100
+        "probability": 5
       }
     ],
     "Car08": [
@@ -820,43 +826,43 @@
         "color1": "F1C74C",
         "color2": "FFFFFF",
         "color3": "FFFFFF",
-        "probability": 100
+        "probability": 5
       },
       {
         "color1": "BC4C3F",
         "color2": "FFFFFF",
         "color3": "FFFFFF",
-        "probability": 100
+        "probability": 5
       },
       {
         "color1": "617966",
         "color2": "FFFFFF",
         "color3": "FFFFFF",
-        "probability": 100
+        "probability": 5
       },
       {
         "color1": "7596A8",
         "color2": "FFFFFF",
         "color3": "FFFFFF",
-        "probability": 100
+        "probability": 5
       },
       {
         "color1": "736457",
         "color2": "FFFFFF",
         "color3": "FFFFFF",
-        "probability": 100
+        "probability": 5
       },
       {
         "color1": "FFE1B6",
         "color2": "FFFFFF",
         "color3": "FFFFFF",
-        "probability": 100
+        "probability": 5
       },
       {
         "color1": "8DB3C2",
         "color2": "FFFFFF",
         "color3": "FFFFFF",
-        "probability": 100
+        "probability": 5
       }
     ],
     "Van01": [
@@ -915,7 +921,7 @@
         "probability": 100
       },
       {
-        "color1": "D9BA34",
+        "color1": "A67C00",
         "color2": "FFFFFF",
         "color3": "FFFFFF",
         "probability": 100
@@ -944,43 +950,43 @@
         "color1": "D95959",
         "color2": "FFFFFF",
         "color3": "FFFFFF",
-        "probability": 100
+        "probability": 5
       },
       {
         "color1": "819F77",
         "color2": "FFFFFF",
         "color3": "FFFFFF",
-        "probability": 100
+        "probability": 5
       },
       {
         "color1": "787878",
         "color2": "FFFFFF",
         "color3": "FFFFFF",
-        "probability": 100
+        "probability": 5
       },
       {
         "color1": "657995",
         "color2": "FFFFFF",
         "color3": "FFFFFF",
-        "probability": 100
+        "probability": 5
       },
       {
         "color1": "FFE33D",
         "color2": "FFFFFF",
         "color3": "FFFFFF",
-        "probability": 100
+        "probability": 5
       },
       {
         "color1": "5FB8FF",
         "color2": "FFFFFF",
         "color3": "FFFFFF",
-        "probability": 100
+        "probability": 5
       },
       {
         "color1": "86756E",
         "color2": "FFFFFF",
         "color3": "FFFFFF",
-        "probability": 100
+        "probability": 5
       }
     ],
     "Car02 (copy)": [
@@ -994,55 +1000,55 @@
         "color1": "CA4444",
         "color2": "FFFFFF",
         "color3": "FFFFFF",
-        "probability": 100
+        "probability": 3
       },
       {
         "color1": "39A7C0",
         "color2": "FFFFFF",
         "color3": "FFFFFF",
-        "probability": 100
+        "probability": 3
       },
       {
         "color1": "A4A4A4",
         "color2": "FFFFFF",
         "color3": "FFFFFF",
-        "probability": 100
+        "probability": 3
       },
       {
         "color1": "484848",
         "color2": "FFFFFF",
         "color3": "FFFFFF",
-        "probability": 100
+        "probability": 3
       },
       {
         "color1": "FFD700",
         "color2": "FFFFFF",
         "color3": "FFFFFF",
-        "probability": 100
+        "probability": 3
       },
       {
         "color1": "7BB2A5",
         "color2": "FFFFFF",
         "color3": "FFFFFF",
-        "probability": 100
+        "probability": 3
       },
       {
         "color1": "B4DDFF",
         "color2": "FFFFFF",
         "color3": "FFFFFF",
-        "probability": 100
+        "probability": 3
       },
       {
         "color1": "8D8171",
         "color2": "FFFFFF",
         "color3": "FFFFFF",
-        "probability": 100
+        "probability": 3
       },
       {
         "color1": "FFDEB3",
         "color2": "FFFFFF",
         "color3": "FFFFFF",
-        "probability": 100
+        "probability": 3
       }
     ],
     "Car01": [
@@ -1062,49 +1068,49 @@
         "color1": "CE4242",
         "color2": "CE4242",
         "color3": "FFFFFF",
-        "probability": 100
+        "probability": 3
       },
       {
         "color1": "FFCD2F",
         "color2": "FFCD2F",
         "color3": "FFFFFF",
-        "probability": 100
+        "probability": 3
       },
       {
         "color1": "60DBFF",
         "color2": "60DBFF",
         "color3": "FFFFFF",
-        "probability": 100
+        "probability": 3
       },
       {
         "color1": "7591AE",
         "color2": "7591AE",
         "color3": "FFFFFF",
-        "probability": 100
+        "probability": 3
       },
       {
         "color1": "454545",
         "color2": "454545",
         "color3": "FFFFFF",
-        "probability": 100
+        "probability": 3
       },
       {
         "color1": "FFFFFF",
         "color2": "454545",
         "color3": "FFFFFF",
-        "probability": 100
+        "probability": 3
       },
       {
         "color1": "FFC900",
         "color2": "626262",
         "color3": "FFFFFF",
-        "probability": 100
+        "probability": 3
       },
       {
         "color1": "6DABFF",
         "color2": "454545",
         "color3": "FFFFFF",
-        "probability": 100
+        "probability": 3
       }
     ],
     "Motorbike01": [
@@ -1719,9 +1725,9 @@
     ],
     "EU_PostVan01": [
       {
-        "color1": "FFC859",
-        "color2": "FFFFFF",
-        "color3": "FFFFFF",
+        "color1": "FFCC00",
+        "color2": "D40511",
+        "color3": "D40511",
         "probability": 100
       }
     ],
@@ -1735,14 +1741,20 @@
     ],
     "EU_PoliceVehicle01": [
       {
-        "color1": "C0C0C0",
-        "color2": "CCDF30",
+        "color1": "9A9A9A",
+        "color2": "005A8C",
         "color3": "005A8C",
         "probability": 100
       },
+      {
+        "color1": "C0C0C0",
+        "color2": "005A8C",
+        "color3": "CCDF30",
+        "probability": 40
+      },
 	  {
         "color1": "C0C0C0",
-        "color2": "CCDF30",
+        "color2": "006F3D",
         "color3": "006F3D",
         "probability": 20
       }
@@ -1757,10 +1769,22 @@
     ],
     "EU_PoliceVehicle02": [
       {
-        "color1": "C0C0C0",
-        "color2": "345D8C",
-        "color3": "CCDF30",
+        "color1": "9A9A9A",
+        "color2": "005A8C",
+        "color3": "005A8C",
         "probability": 100
+      },
+      {
+        "color1": "C0C0C0",
+        "color2": "005A8C",
+        "color3": "CCDF30",
+        "probability": 40
+      },
+      {
+        "color1": "C0C0C0",
+        "color2": "006F3D",
+        "color3": "006F3D",
+        "probability": 20
       }
     ],
     "NA_PoliceVehicle02": [
@@ -1829,7 +1853,7 @@
     ],
     "EU_DeliveryVan01": [
       {
-        "color1": "F1F1F1",
+        "color1": "C0C0C0",
         "color2": "6F6F6F",
         "color3": "A3A3A3",
         "probability": 100
@@ -1841,28 +1865,28 @@
         "probability": 100
       },
       {
-        "color1": "952A2A",
+        "color1": "740001",
         "color2": "F6F6F6",
         "color3": "989898",
-        "probability": 100
+        "probability": 50
       },
       {
-        "color1": "4A799F",
+        "color1": "1D303F",
         "color2": "656565",
         "color3": "FFFFFF",
-        "probability": 100
+        "probability": 50
       },
       {
-        "color1": "DDAA37",
+        "color1": "3B5998",
         "color2": "5B5B5B",
         "color3": "C0C0C0",
-        "probability": 100
+        "probability": 50
       },
       {
         "color1": "414141",
         "color2": "D9D9D9",
         "color3": "FFFFFF",
-        "probability": 100
+        "probability": 50
       }
     ],
     "NA_DeliveryVan01": [

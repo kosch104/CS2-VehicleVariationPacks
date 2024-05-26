@@ -33,14 +33,15 @@ namespace CarVariationChanger
         {
             set
             {
-                this.UnregisterInOptionsUI();
-                this.RegisterInOptionsUI();
+                PackDropdownItemsVersion++;
             }
         }
 
         private string _packDropdown = "Realistic Global";
+        private static int PackDropdownItemsVersion { get; set; }
 
         [SettingsUIDropdown(typeof(Setting), nameof(GetNameDropdownItems))]
+        [SettingsUIValueVersion(typeof(Setting), nameof(PackDropdownItemsVersion))]
         public string PackDropdown
         {
             get
