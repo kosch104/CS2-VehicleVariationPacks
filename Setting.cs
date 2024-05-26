@@ -1,16 +1,15 @@
-﻿using Colossal;
+﻿using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
+using Colossal;
 using Colossal.IO.AssetDatabase;
 using Game.Modding;
 using Game.Settings;
-using Game.UI;
 using Game.UI.Widgets;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.IO;
 
-namespace CarVariationChanger
+namespace VehicleVariationPacks
 {
-    [FileLocation(nameof(CarVariationChanger))]
+    [FileLocation(nameof(VehicleVariationPacks))]
     public class Setting : ModSetting
     {
         public static Setting Instance;
@@ -53,7 +52,7 @@ namespace CarVariationChanger
                 _packDropdown = value;
                 if (value != null)
                 {
-                    CarVariationChangerSystem.Instance.LoadVariationPack(value);
+                    VehicleVariationPacks.CarVariationChangerSystem.Instance.LoadVariationPack(value);
                 }
             }
         }

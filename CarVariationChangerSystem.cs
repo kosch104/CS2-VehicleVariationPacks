@@ -1,20 +1,14 @@
-using System;
-using System.Collections.Generic;
-using Colossal.Entities;
 using Colossal.Logging;
 using Colossal.Serialization.Entities;
 using Game;
 using Game.Common;
 using Game.Prefabs;
-using Game.Rendering;
-using Game.UI;
 using Game.Vehicles;
 using Unity.Collections;
 using Unity.Entities;
-using UnityEngine;
 using PersonalCar = Game.Vehicles.PersonalCar;
 
-namespace CarVariationChanger
+namespace VehicleVariationPacks
 {
     public partial class CarVariationChangerSystem : GameSystemBase
     {

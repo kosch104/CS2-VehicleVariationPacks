@@ -2,7 +2,7 @@
 using Newtonsoft.Json;
 using UnityEngine;
 
-namespace CarVariationChanger;
+namespace VehicleVariationPacks;
 
 public class ColorHandler : JsonConverter
 {

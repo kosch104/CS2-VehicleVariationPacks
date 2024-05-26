@@ -1,13 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.IO;
-using Colossal.PSI.Environment;
 using Game.Prefabs;
 using Game.Rendering;
 using Newtonsoft.Json;
 using Unity.Entities;
 using UnityEngine;
 
-namespace CarVariationChanger;
+namespace VehicleVariationPacks;
 
 public record PrefabEntry
 {
