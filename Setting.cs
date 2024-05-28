@@ -94,7 +94,7 @@ namespace VehicleVariationPacks
         {
             return new Dictionary<string, string>
             {
-                { m_Setting.GetSettingsLocaleID(), "Car Variation Changer" },
+                { m_Setting.GetSettingsLocaleID(), "Vehicle Variation Packs" },
 
                 { m_Setting.GetOptionLabelLocaleID(nameof(Setting.OpenPacksFolder)), "Open Packs Folder" },
                 {
