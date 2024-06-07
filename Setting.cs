@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.IO;
 using Colossal;
 using Colossal.IO.AssetDatabase;
+using Colossal.PSI.Environment;
 using Game.Modding;
 using Game.Settings;
 using Game.UI.Widgets;
@@ -22,7 +23,7 @@ namespace VehicleVariationPacks
         {
             set
             {
-                var file = Mod.path;
+                var file = EnvPath.kUserDataPath + "/ModsData/VehicleVariationPacks/packs";
                 var parentDir = Directory.GetParent(file).FullName;
                 Process.Start(Path.Combine(parentDir, "packs"));
             }
@@ -52,7 +53,7 @@ namespace VehicleVariationPacks
                 _packDropdown = value;
                 if (value != null)
                 {
-                    VehicleVariationPacks.CarVariationChangerSystem.Instance.LoadVariationPack(value);
+                    VehicleVariationPacks.VehicleVariationChangerSystem.Instance.LoadVariationPack(value);
                 }
             }
         }

@@ -2135,6 +2135,18 @@
                 "color2": "FFD85F",
                 "color3": "F3F3F3",
                 "probability": 100
+            },
+            {
+                "color1": "FF3434",
+                "color2": "F3F3F3",
+                "color3": "8C8E8D",
+                "probability": 100
+            },
+            {
+                "color1": "A72920",
+                "color2": "F3F3F3",
+                "color3": "8C8E8D",
+                "probability": 100
             }
         ],
         "NA_FireTruck01": [

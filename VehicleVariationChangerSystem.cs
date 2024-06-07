@@ -7,10 +7,11 @@ using Game.Vehicles;
 using Unity.Collections;
 using Unity.Entities;
 using PersonalCar = Game.Vehicles.PersonalCar;
+using PublicTransport = Game.Prefabs.PublicTransport;
 
 namespace VehicleVariationPacks
 {
-    public partial class CarVariationChangerSystem : GameSystemBase
+    public partial class VehicleVariationChangerSystem : GameSystemBase
     {
         private static ILog Logger;
 
@@ -18,7 +19,7 @@ namespace VehicleVariationPacks
 
         //private UIUpdateState uiUpdateState;
         private PrefabSystem prefabSystem;
-        public static CarVariationChangerSystem Instance { get; private set; }
+        public static VehicleVariationChangerSystem Instance { get; private set; }
         private VariationPack _currentVariationPack;
 
         protected override void OnCreate()
@@ -71,9 +72,8 @@ namespace VehicleVariationPacks
             {
                 Any =
                 [
-                    ComponentType.ReadOnly<PersonalCar>(),
-                    ComponentType.ReadOnly<ParkedCar>(),
-                ]
+                    ComponentType.ReadOnly<Car>(),
+                ],
             };
             var updateQuery = GetEntityQuery(desc);
             foreach (var entity in updateQuery.ToEntityArray(Allocator.Temp))

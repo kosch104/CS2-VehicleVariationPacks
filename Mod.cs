@@ -14,7 +14,7 @@ namespace VehicleVariationPacks
             .SetShowsErrorsInUI(false);
 
         private Setting m_Setting;
-        public static string path;
+        private string path;
 
         public void OnLoad(UpdateSystem updateSystem)
         {
@@ -23,7 +23,8 @@ namespace VehicleVariationPacks
             if (GameManager.instance.modManager.TryGetExecutableAsset(this, out var asset))
                 path = asset.path;
 
-            updateSystem.UpdateAt<CarVariationChangerSystem>(SystemUpdatePhase.MainLoop);
+            CopyEmbeddedPacks();
+            updateSystem.UpdateAt<VehicleVariationChangerSystem>(SystemUpdatePhase.MainLoop);
 
             m_Setting = new Setting(this);
             m_Setting.RegisterInOptionsUI();
@@ -31,6 +32,21 @@ namespace VehicleVariationPacks
             Setting.Instance = m_Setting;
 
             AssetDatabase.global.LoadSettings(nameof(VehicleVariationPacks), m_Setting, new Setting(this));
+        }
+
+        private void CopyEmbeddedPacks()
+        {
+            var modPath = Path.GetDirectoryName(path);
+            var srcPath = Path.Combine(modPath, "packs");
+            var destPath = Path.Combine(EnvPath.kUserDataPath, "ModsData", nameof(VehicleVariationPacks), "packs");
+            if (!Directory.Exists(destPath))
+                Directory.CreateDirectory(destPath);
+            foreach(var file in Directory.GetFiles(srcPath))
+            {
+                var destFile = Path.Combine(destPath, Path.GetFileName(file));
+                if (!File.Exists(destFile))
+                    File.Copy(file, destFile);
+            }
         }
 
         public void OnDispose()
