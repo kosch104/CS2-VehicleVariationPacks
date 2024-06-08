@@ -29,9 +29,10 @@ namespace VehicleVariationPacks
             m_Setting = new Setting(this);
             m_Setting.RegisterInOptionsUI();
             GameManager.instance.localizationManager.AddSource("en-US", new LocaleEN(m_Setting));
-            Setting.Instance = m_Setting;
 
             AssetDatabase.global.LoadSettings(nameof(VehicleVariationPacks), m_Setting, new Setting(this));
+            m_Setting.HiddenSetting = false;
+            Setting.Instance = m_Setting;
         }
 
         private void CopyEmbeddedPacks()

@@ -10,7 +10,7 @@ using Game.UI.Widgets;
 
 namespace VehicleVariationPacks
 {
-    [FileLocation(nameof(VehicleVariationPacks))]
+    [FileLocation($"ModsSettings/{nameof(VehicleVariationPacks)}/{nameof(VehicleVariationPacks)}")]
     public class Setting : ModSetting
     {
         public static Setting Instance;
@@ -18,6 +18,9 @@ namespace VehicleVariationPacks
         {
 
         }
+
+        [SettingsUIHidden]
+        public bool HiddenSetting { get; set; }
 
         public bool OpenPacksFolder
         {
@@ -77,7 +80,7 @@ namespace VehicleVariationPacks
 
         public override void SetDefaults()
         {
-            throw new System.NotImplementedException();
+            HiddenSetting = true;
         }
     }
 
