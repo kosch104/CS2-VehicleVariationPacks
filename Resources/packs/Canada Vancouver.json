@@ -1,5 +1,5 @@
 {
-    "Name": "German Vehicle Pack",
+    "Name": "Canada Vancouver",
     "Entries": {
         "TruckTrailer02": [
             {
@@ -105,54 +105,6 @@
                 "probability": 15
             }
         ],
-        "Taxi01": [
-            {
-                "color1": "FDEFCF",
-                "color2": "000000",
-                "color3": "FFFFFF",
-                "probability": 100
-            }
-        ],
-        "Taxi02": [
-            {
-                "color1": "FDEFCF",
-                "color2": "000000",
-                "color3": "000000",
-                "probability": 100
-            }
-        ],
-        "RoadMaintenanceVehicle01": [
-            {
-                "color1": "F7B500",
-                "color2": "FFFFFF",
-                "color3": "FFFFFF",
-                "probability": 100
-            }
-        ],
-        "PrisonVan01": [
-            {
-                "color1": "FFFFFF",
-                "color2": "FFFFFF",
-                "color3": "FFFFFF",
-                "probability": 100
-            }
-        ],
-        "ParkMaintenanceVehicle01": [
-            {
-                "color1": "2D5546",
-                "color2": "55462D",
-                "color3": "FFFFFF",
-                "probability": 100
-            }
-        ],
-        "EU_Snowplow01": [
-            {
-                "color1": "FFCF00",
-                "color2": "FFFFFF",
-                "color3": "FFFFFF",
-                "probability": 100
-            }
-        ],
         "OreMiningTruck01": [
             {
                 "color1": "434343",
@@ -243,20 +195,6 @@
                 "color2": "1e1414",
                 "color3": "FFFFFF",
                 "probability": 100
-            }
-        ],
-        "EU_GarbageTruck01": [
-            {
-                "color1": "DB6C2F",
-                "color2": "656565",
-                "color3": "DB6C2F",
-                "probability": 100
-            },
-            {
-                "color1": "4B6951",
-                "color2": "656565",
-                "color3": "4B6951",
-                "probability": 50
             }
         ],
         "FrontendLoaderTrailer01": [
@@ -1871,30 +1809,6 @@
                 "probability": 100
             }
         ],
-        "Bus01": [
-            {
-                "color1": "FFFFFF",
-                "color2": "FFFFFF",
-                "color3": "FFFFFF",
-                "probability": 100
-            }
-        ],
-        "Bus02": [
-            {
-                "color1": "FFFFFF",
-                "color2": "FFFFFF",
-                "color3": "FFFFFF",
-                "probability": 100
-            }
-        ],
-        "Bus03": [
-            {
-                "color1": "FFFFFF",
-                "color2": "5E5E5E",
-                "color3": "454545",
-                "probability": 100
-            }
-        ],
         "BlastholeDrillingRig01": [
             {
                 "color1": "9F4A44",
@@ -2039,164 +1953,6 @@
                 "probability": 100
             }
         ],
-        "EU_PostVan01": [
-            {
-                "color1": "FFCC00",
-                "color2": "D40511",
-                "color3": "D40511",
-                "probability": 100
-            }
-        ],
-        "NA_PostVan01": [
-            {
-                "color1": "FFFFFF",
-                "color2": "FFC245",
-                "color3": "FFFFFF",
-                "probability": 100
-            }
-        ],
-        "EU_PoliceVehicle01": [
-            {
-                "color1": "C0C0C0",
-                "color2": "005A8C",
-                "color3": "005A8C",
-                "probability": 100
-            },
-            {
-                "color1": "C0C0C0",
-                "color2": "CCDF30",
-                "color3": "005A8C",
-                "probability": 40
-            },
-            {
-                "color1": "C0C0C0",
-                "color2": "006F3D",
-                "color3": "006F3D",
-                "probability": 20
-            }
-        ],
-        "NA_PoliceVehicle01": [
-            {
-                "color1": "333333",
-                "color2": "FFFFFF",
-                "color3": "FFFFFF",
-                "probability": 100
-            }
-        ],
-        "EU_PoliceVehicle02": [
-            {
-                "color1": "C0C0C0",
-                "color2": "005A8C",
-                "color3": "005A8C",
-                "probability": 100
-            },
-            {
-                "color1": "C0C0C0",
-                "color2": "005A8C",
-                "color3": "CCDF30",
-                "probability": 40
-            },
-            {
-                "color1": "C0C0C0",
-                "color2": "006F3D",
-                "color3": "006F3D",
-                "probability": 20
-            }
-        ],
-        "NA_PoliceVehicle02": [
-            {
-                "color1": "333333",
-                "color2": "FFFFFF",
-                "color3": "FFFFFF",
-                "probability": 100
-            }
-        ],
-        "EU_FireTruck01": [
-            {
-                "color1": "FF3434",
-                "color2": "FFD85F",
-                "color3": "8C8E8D",
-                "probability": 100
-            },
-            {
-                "color1": "FF3434",
-                "color2": "FFD85F",
-                "color3": "F3F3F3",
-                "probability": 100
-            },
-            {
-                "color1": "A72920",
-                "color2": "FFD85F",
-                "color3": "8C8E8D",
-                "probability": 100
-            },
-            {
-                "color1": "A72920",
-                "color2": "FFD85F",
-                "color3": "F3F3F3",
-                "probability": 100
-            },
-            {
-                "color1": "FF3434",
-                "color2": "F3F3F3",
-                "color3": "8C8E8D",
-                "probability": 100
-            },
-            {
-                "color1": "A72920",
-                "color2": "F3F3F3",
-                "color3": "8C8E8D",
-                "probability": 100
-            }
-        ],
-        "NA_FireTruck01": [
-            {
-                "color1": "E70000",
-                "color2": "FFFFFF",
-                "color3": "FFD700",
-                "probability": 100
-            }
-        ],
-        "EU_Ambulance01": [
-            {
-                "color1": "D3E232",
-                "color2": "146F5E",
-                "color3": "EEFF38",
-                "probability": 0
-            },
-            {
-                "color1": "FFFFFF",
-                "color2": "FF3838",
-                "color3": "FAFA32",
-                "probability": 50
-            },
-            {
-                "color1": "FFFFFF",
-                "color2": "E60004",
-                "color3": "FAFA32",
-                "probability": 50
-            },
-            {
-                "color1": "E60004",
-                "color2": "FFFFFF",
-                "color3": "FAFA32",
-                "probability": 40
-            },
-            {
-                "color1": "A72920",
-                "color2": "FFFFFF",
-                "color3": "FAFA32",
-                "probability": 20
-            }
-        ],
-        "NA_Ambulance01": [
-            {
-                "color1": "FFFFFF",
-                "color2": "FF000A",
-                "color3": "FFD800",
-                "probability": 100
-            }
-        ],
         "EU_DeliveryVan01": [
             {
                 "color1": "C0C0C0",
@@ -2271,6 +2027,68 @@
                 "color2": "FFFFFF",
                 "color3": "FFFFFF",
                 "probability": 40
+            }
+        ],
+
+        "NA_FireTruck01": [
+            {
+                "color1": "E70000",
+                "color2": "000000",
+                "color3": "FFD700",
+                "probability": 100
+            }
+        ],
+        "NA_GarbageTruck01": [
+            {
+                "color1": "FFFFFF",
+                "color2": "18330a",
+                "color3": "a6a6a6",
+                "probability": 100
+            }
+        ],
+        "Taxi01": [
+            {
+                "color1": "ffe23a",
+                "color2": "000000",
+                "color3": "FFFFFF",
+                "probability": 70
+            },
+            {
+                "color1": "fc872a",
+                "color2": "000000",
+                "color3": "FFFFFF",
+                "probability": 30
+            }
+
+        ],
+        "Taxi02": [
+            {
+                "color1": "ffe23a",
+                "color2": "000000",
+                "color3": "FFFFFF",
+                "probability": 70
+            },
+            {
+                "color1": "fc872a",
+                "color2": "000000",
+                "color3": "FFFFFF",
+                "probability": 30
+            }
+        ],
+        "NA_PostVan01": [
+            {
+                "color1": "DA0614",
+                "color2": "FFFFFF",
+                "color3": "FFFFFF",
+                "probability": 100
+            }
+        ],
+        "NA_Ambulance01": [
+            {
+                "color1": "FFFFFF",
+                "color2": "FF000A",
+                "color3": "4d5bff",
+                "probability": 100
             }
         ]
     }
