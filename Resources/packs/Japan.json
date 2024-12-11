@@ -1,0 +1,93 @@
+{
+  "Name": "Japan",
+  "Entries": {
+    "EU_FireTruck01": [
+      {
+        "Color1": "EC2F36",
+        "Color2": "EC2F36",
+        "Color3": "BFACAD",
+        "Probability": 100
+      }
+    ],
+    "EU_Ambulance01": [
+      {
+        "Color1": "D2D2D2",
+        "Color2": "BF1D1D",
+        "Color3": "D6D6D6",
+        "Probability": 100
+      }
+    ],
+    "EU_PoliceVehicle01": [
+      {
+        "Color1": "ECECEC",
+        "Color2": "000000",
+        "Color3": "000000",
+        "Probability": 100
+      }
+    ],
+    "EU_PostVan01": [
+      {
+        "Color1": "EC2F36",
+        "Color2": "EC2F36",
+        "Color3": "EC2F36",
+        "Probability": 100
+      }
+    ],
+    "EU_GarbageTruck01": [
+      {
+        "Color1": "D4D4D4",
+        "Color2": "394465",
+        "Color3": "394465",
+        "Probability": 100
+      }
+    ],
+    "Taxi01": [
+      {
+        "Color1": "000000",
+        "Color2": "000000",
+        "Color3": "000000",
+        "Probability": 100
+      },
+      {
+        "Color1": "A3A03B",
+        "Color2": "991D1D",
+        "Color3": "FFFFFF",
+        "Probability": 100
+      },
+      {
+        "Color1": "345E43",
+        "Color2": "345E43",
+        "Color3": "FFA724",
+        "Probability": 100
+      }
+    ],
+    "Taxi02": [
+      {
+        "Color1": "000000",
+        "Color2": "000000",
+        "Color3": "000000",
+        "Probability": 100
+      },
+      {
+        "Color1": "A3A03B",
+        "Color2": "991D1D",
+        "Color3": "FFFFFF",
+        "Probability": 100
+      },
+      {
+        "Color1": "345E43",
+        "Color2": "345E43",
+        "Color3": "FFA724",
+        "Probability": 100
+      }
+    ],
+    "EU_PoliceVehicle02": [
+      {
+        "Color1": "ECECEC",
+        "Color2": "000000",
+        "Color3": "000000",
+        "Probability": 100
+      }
+    ]
+  }
+}

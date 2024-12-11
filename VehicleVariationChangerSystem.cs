@@ -57,6 +57,7 @@ namespace VehicleVariationPacks
             if (mode == GameMode.MainMenu)
             {
                 //UpdatePrefabs();
+                SaveDefaultVariations();
                 UpdateEntities();
             }
         }
